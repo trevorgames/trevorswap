@@ -1,5 +1,5 @@
 [profile.default]
-solc = "0.8.23"
+solc = "0.6.12"
 block_timestamp = 1_680_220_800
 bytecode_hash = "none"
 evm_version = "paris"

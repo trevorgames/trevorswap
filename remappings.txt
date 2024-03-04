@@ -1,2 +1,2 @@
-forge-std/=node_modules/forge-std/
+forge-std/=node_modules/forge-std/src/
 @prb/test/=node_modules/@prb/test/src/
