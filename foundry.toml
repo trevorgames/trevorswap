@@ -1,0 +1,10 @@
+[profile.default]
+solc = "0.8.23"
+block_timestamp = 1_680_220_800
+bytecode_hash = "none"
+evm_version = "paris"
+fuzz = { runs = 1_000 }
+optimizer_runs = 10_000
+
+[fmt]
+line_length = 120
