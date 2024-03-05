@@ -14,6 +14,7 @@
     "fmt": "forge fmt && bun run prettier:write"
   },
   "devDependencies": {
+    "@openzeppelin/contracts": "^3.4.2",
     "@prb/test": "^0.6.4",
     "forge-std": "github:foundry-rs/forge-std#v1.7.6",
     "prettier": "^3.2.5",

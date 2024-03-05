@@ -9,6 +9,6 @@ optimizer_runs = 10_000
 [fmt]
 line_length = 120
 
-[rpc_endpoint]
+[rpc_endpoints]
 localhost = "http://localhost:8545"
 sepolia = "https://sepolia.infura.io/v3/${API_KEY_INFURA}"

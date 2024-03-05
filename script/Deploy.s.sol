@@ -10,14 +10,11 @@ import {BaseScript} from "./Base.s.sol";
 
 /// @dev See the Solidity Scripting tutorial: https://book.getfoundry.sh/tutorials/solidity-scripting
 contract Deploy is BaseScript {
-    UniswapV2ERC20 internal erc20;
     UniswapV2Factory internal factory;
     UniswapV2Router02 internal router02;
     address internal WNATIVE_ADDRESS;
 
-    function run() public broadcast returns (UniswapV2ERC20, UniswapV2Factory, UniswapV2Router02) {
-        erc20 = new UniswapV2ERC20();
-
+    function run() public broadcast returns (UniswapV2Factory, UniswapV2Router02) {
         factory = new UniswapV2Factory(broadcaster);
 
         uint256 chainId;
@@ -26,7 +23,7 @@ contract Deploy is BaseScript {
         }
 
         WNATIVE_ADDRESS = vm.envOr({name: "WNATIVE_ADDRESS", defaultValue: address(0)});
-        if (chainId == 31337) {
+        if (chainId == 31337 || chainId == 1337) {
             WETH9 weth = new WETH9();
             WNATIVE_ADDRESS = address(weth);
         }
@@ -36,6 +33,6 @@ contract Deploy is BaseScript {
 
         router02 = new UniswapV2Router02(address(factory), WNATIVE_ADDRESS);
 
-        return (erc20, factory, router02);
+        return (factory, router02);
     }
 }
